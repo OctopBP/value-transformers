@@ -16,7 +16,7 @@ struct UserInfoView: View {
             Text("Balance: \(user.wallet.balance)$")
             
             Button("Add 100") {
-                user.wallet.balance += 100
+                user.wallet.add(amount: 100)
             }
             .buttonStyle(.bordered)
         }

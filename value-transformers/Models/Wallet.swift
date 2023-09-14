@@ -7,11 +7,10 @@
 
 import SwiftData
 
-@Model
-final class Wallet {
-    var balance: Int
+struct Wallet: Codable {
+    private(set) var balance: Int
     
-    init(balance: Int) {
-        self.balance = balance
+    mutating func add(amount: Int) {
+        balance += amount
     }
 }
