@@ -6,10 +6,13 @@
 //
 
 import SwiftData
+import Foundation
 
 @Model
 final class User {
     var name: String
+    
+    @Attribute(.transformable(by: WalletTransformer.self))
     var wallet: Wallet
     
     init(name: String, wallet: Wallet) {
