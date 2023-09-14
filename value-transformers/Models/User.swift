@@ -10,10 +10,10 @@ import SwiftData
 @Model
 final class User {
     var name: String
-    var balance: Int
+    var wallet: Wallet
     
-    init(name: String, balance: Int) {
+    init(name: String, wallet: Wallet) {
         self.name = name
-        self.balance = balance
+        self.wallet = wallet
     }
 }

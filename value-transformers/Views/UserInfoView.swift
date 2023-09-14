@@ -13,10 +13,10 @@ struct UserInfoView: View {
     var body: some View {
         VStack {
             Text(user.name).font(.title)
-            Text("Balance: \(user.balance)$")
+            Text("Balance: \(user.wallet.balance)$")
             
             Button("Add 100") {
-                user.balance += 100
+                user.wallet.balance += 100
             }
             .buttonStyle(.bordered)
         }
@@ -24,6 +24,6 @@ struct UserInfoView: View {
 }
 
 #Preview {
-    UserInfoView(user: User(name: "James", balance: 100))
+    UserInfoView(user: User(name: "James", wallet: Wallet(balance: 100)))
         .modelContainer(for: User.self, inMemory: true)
 }

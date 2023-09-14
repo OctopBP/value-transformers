@@ -19,7 +19,7 @@ struct ContentView: View {
                     NavigationLink {
                         UserInfoView(user: user)
                     } label: {
-                        Text("\(user.name) (\(user.balance)$)")
+                        Text("\(user.name) (\(user.wallet.balance)$)")
                     }
                 }
                 .onDelete(perform: deleteUsers)
@@ -41,7 +41,7 @@ struct ContentView: View {
 
     private func addUser() {
         withAnimation {
-            let newUser = User(name: "James", balance: 0)
+            let newUser = User(name: "James", wallet: Wallet(balance: 0))
             modelContext.insert(newUser)
         }
     }
